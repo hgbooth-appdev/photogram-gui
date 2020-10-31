@@ -31,4 +31,19 @@ class UsersController < ApplicationController
 
     redirect_to "/users/" + cur.username
   end 
+
+  def update 
+
+    userId = params.fetch("userid")
+    username = params.fetch("input_username")
+
+    cur = User.where id: userId
+    cur = cur.first
+
+    cur.username = username
+
+    cur.save
+
+    redirect_to "/users/" + cur.username
+  end 
 end

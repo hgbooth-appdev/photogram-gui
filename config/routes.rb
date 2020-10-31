@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/users/:username", controller: "users", action: "show"
   
   get "/insert_user_record", controller: "users", action: "new"
+  get "/update_user/:userid", controller: "users", action: "update"
   
   get "/photos", controller: "photos", action: "index"
   get "/photos/:photoname", controller: "photos", action: "show"
