@@ -1,5 +1,21 @@
 <h1>List of photos</h1>
 
+<form action="/insert_photo_record">
+  
+  <label for="image">Image</label>
+  <input type="text" id="image" name="imageUpload" placeholder="Enter a URL for the image...">
+  
+  <label for="caption">Caption</label>
+  <textarea type="text" id="caption" name="captionUpload" placeholder="Enter a caption for the photo..."></textarea>
+  
+  <label for="owner">Owner</label>
+  <input type="text" id="owner" name="ownerUpload" placeholder="Enter an ID of a User">
+
+  <button>Add photo</button>
+
+</form>
+
+<hr>
 
 <table border="1">
   <tr>

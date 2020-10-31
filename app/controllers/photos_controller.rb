@@ -31,4 +31,19 @@ class PhotosController < ApplicationController
 
   end
 
+  def add
+
+    image = params.fetch("imageUpload")
+    caption = params.fetch("captionUpload")
+    owner = params.fetch("ownerUpload")
+
+    cur = Photo.new
+    cur.image = image
+    cur.caption = caption
+    cur.owner_id = User.where username: owner
+
+    cur.save
+
+  end 
+
 end
