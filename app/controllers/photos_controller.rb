@@ -35,14 +35,17 @@ class PhotosController < ApplicationController
 
     image = params.fetch("imageUpload")
     caption = params.fetch("captionUpload")
-    owner = params.fetch("ownerUpload")
+    ownerId = params.fetch("ownerUpload")
 
     cur = Photo.new
+    
     cur.image = image
     cur.caption = caption
-    cur.owner_id = User.where username: owner
+    cur.owner_id = ownerId
 
     cur.save
+
+    redirect_to "/photos/" + cur.id.to_s
 
   end 
 
