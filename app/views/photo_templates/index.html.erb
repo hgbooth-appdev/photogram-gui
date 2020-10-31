@@ -1,0 +1,27 @@
+<h1>List of photos</h1>
+
+
+<table border="1">
+  <tr>
+    <th>Image</th>
+    <th>Caption</th>
+    <th>Owner</th>
+    <th>Posted</th>
+    <th></th>
+  </tr>
+
+  <% @photos.each do |p|%>
+
+    <tr>
+      <td><img src="<%= p.image %>"></td>
+      <td><%= p.caption %></td>
+      <td><%= p.poster.username %></td>
+      <td><%= p.created_at %></td>
+      <td><a href="/photos/<%= p.id %>">Show details</a></td>
+
+
+    </tr>
+
+  <% end %>
+
+</table>
