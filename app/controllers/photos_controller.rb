@@ -11,12 +11,7 @@ class PhotosController < ApplicationController
 
     @photo = Photo.where({:id => params.fetch("photoname")}).first
 
-    if @photo == nil
-      redirect_to "/404"
-    else
-      render template: "photo_templates/show.html.erb"
-    end 
-
+    render template: "photo_templates/show.html.erb"
   end
 
   def delete
