@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/delete_photo/:photoname", controller: "photos", action: "delete"
   
   get "/insert_photo_record", controller: "photos", action: "add"
+  get "/update_photo/:photoid", controller: "photos", action: "update"
 
 
 

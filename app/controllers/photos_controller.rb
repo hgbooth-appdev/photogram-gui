@@ -49,4 +49,22 @@ class PhotosController < ApplicationController
 
   end 
 
+  def update
+    
+    curId = params.fetch("photoid")
+    inputImage = params.fetch("input_image")
+    inputCaption = params.fetch("input_caption")
+
+    cur = Photo.where id: curId
+    cur = cur.first
+
+    cur.image = inputImage
+    cur.caption = inputCaption
+
+    cur.save
+
+    redirect_to "/photos/" + cur.id.to_s
+
+  end
+
 end
