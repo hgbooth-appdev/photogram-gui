@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
 
   def index 
 
-    @photos = Photo.all
+    @photos = Photo.all.order created_at: :desc
     render template: "photo_templates/index.html.erb"
   end
 
@@ -18,4 +18,17 @@ class PhotosController < ApplicationController
     end 
 
   end
+
+  def delete
+
+    photo = Photo.where({:id => params.fetch("photoname")}).first
+
+    photo.destroy
+    
+    # delete comments?
+
+    redirect_to "/photos"
+
+  end
+
 end
